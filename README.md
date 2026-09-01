@@ -1,2 +1,2 @@
 # TOPLANE-KINGDOM
-An EUW-wide League of Legends community dedicated to Toplane players.
+An EUW League of Legends community for Toplane players, focused on sparring, matchup discussion, learning and improvement.
