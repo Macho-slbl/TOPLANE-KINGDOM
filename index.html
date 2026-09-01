@@ -61,10 +61,14 @@
             margin: 0 auto 45px;
         }
 
+        /* =========================
+           FEATURE CARDS
+           ========================= */
+
         .features {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 260px);
             justify-content: center;
-            align-items: stretch;
             gap: 20px;
             margin-bottom: 45px;
         }
@@ -75,6 +79,17 @@
             border-radius: 12px;
             padding: 25px;
             width: 260px;
+            min-height: 170px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Put VOD Reviews in the middle */
+        .feature:nth-child(3) {
+            grid-column: 1 / 3;
+            justify-self: center;
         }
 
         .feature h2 {
@@ -86,6 +101,10 @@
             color: #aaa;
             line-height: 1.5;
         }
+
+        /* =========================
+           DISCORD BUTTON
+           ========================= */
 
         .button {
             display: inline-block;
@@ -104,39 +123,62 @@
             opacity: 0.9;
         }
 
+        /* =========================
+           FOOTER
+           ========================= */
+
         footer {
             margin-top: 50px;
             color: #777;
             font-size: 14px;
         }
 
-        @media (max-width: 850px) {
+        /* =========================
+           TABLET
+           ========================= */
+
+        @media (max-width: 650px) {
+
             .features {
-                flex-wrap: wrap;
+                grid-template-columns: 1fr;
+                justify-items: center;
             }
 
             .feature {
-                width: 280px;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .feature:nth-child(3) {
+                grid-column: auto;
             }
         }
 
+        /* =========================
+           MOBILE
+           ========================= */
+
         @media (max-width: 600px) {
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .crown {
+                font-size: 55px;
+            }
+
             h1 {
-                font-size: 38px;
+                font-size: 34px;
+                letter-spacing: 2px;
             }
 
             .subtitle {
                 font-size: 18px;
             }
 
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature {
-                width: 100%;
-                max-width: 350px;
+            .description {
+                font-size: 16px;
             }
         }
     </style>
@@ -165,6 +207,7 @@
 
             <div class="feature">
                 <h2>⚔️ Sparring</h2>
+
                 <p>
                     Find players to practice specific matchups,
                     laning phases and mechanics.
@@ -173,6 +216,7 @@
 
             <div class="feature">
                 <h2>🧠 Learning</h2>
+
                 <p>
                     Discuss matchups, wave management, builds,
                     macro and everything related to Toplane.
@@ -181,6 +225,7 @@
 
             <div class="feature">
                 <h2>🎥 VOD Reviews</h2>
+
                 <p>
                     Get feedback on your games and learn from
                     experienced Toplane players.
